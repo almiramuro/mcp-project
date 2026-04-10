@@ -64,7 +64,12 @@ export function ChatHistory() {
             <div className="text-gray-500 text-xs p-2">{locale.sidebar.noChats}</div>
           ) : (
             historyItems.map((item) => (
-              <HistoryItem key={item.id} id={item.id} title={item.title} />
+              <HistoryItem
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                onDelete={loadHistory}
+              />
             ))
           )}
         </div>

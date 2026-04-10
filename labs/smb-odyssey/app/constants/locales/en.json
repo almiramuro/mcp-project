@@ -1,0 +1,16 @@
+{
+  "chat": {
+    "newChat": "New Chat",
+    "creating": "Creating...",
+    "placeholder": "Ask something...",
+    "loading": "Loading chat...",
+    "startConversation": "Ask me anything, and let's explore the wonders of knowledge together!",
+    "send": "Send"
+  },
+  "sidebar": {
+    "chatHistory": "Chat History",
+    "home": "Home",
+    "noChats": "No chats yet",
+    "loading": "Loading..."
+  }
+}
