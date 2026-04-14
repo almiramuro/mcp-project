@@ -1,11 +1,22 @@
 "use client";
 
+import styles from "@/app/(pages)/control-center/control-center.module.css"
+import ChatSidePanel from "@/components/ControlCenter/ChatPanel";
+import ChatWindow from "@/components/ControlCenter/ChatWindow";
+
 export default function ControlCenter() {
   return (
-    <div className="flex items-center justify-center h-full bg-black text-white px-8">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Control Center</h1>
-        <p className="text-gray-400">Coming soon...</p>
+    <div className="page-wrapper">
+      <div className="page-title">
+        <h1>Control Center</h1>
+      </div>
+      <div className={`${styles["control-center-container"]}`}>
+        <div>
+          <ChatSidePanel />
+        </div>
+        <div>
+          <ChatWindow />
+        </div>
       </div>
     </div>
   );

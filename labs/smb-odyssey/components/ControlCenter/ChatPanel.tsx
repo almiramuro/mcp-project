@@ -1,8 +1,8 @@
 import styles from "@/app/(pages)/control-center/control-center.module.css"
 
-export default function SettingsSidePanel() {
+export default function ChatSidePanel() {
     return (
-        <div className={styles["side-panel"]}>
+        <div className={styles["chat-panel"]}>
             Chat Panel
         </div>
     );

@@ -4,8 +4,8 @@ import SettingsSidePanel from "@/components/Settings/SettingsSidePanel";
 
 export default function Settings() {
   return (
-    <div className={`${styles["settings-page-wrapper"]}`}>
-      <div className={`${styles["title"]}`}>
+    <div className="page-wrapper">
+      <div className="page-title">
         <h1>Settings</h1>
       </div>
       <div className={`${styles["settings-container"]}`}>

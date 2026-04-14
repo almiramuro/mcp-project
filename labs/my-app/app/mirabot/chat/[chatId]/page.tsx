@@ -74,7 +74,7 @@ export default function ChatPage({ params }: PageProps) {
         <button
           onClick={handleSendMessage}
           disabled={isLoading}
-          className="bg-white text-black px-6 rounded-xl hover:bg-gray-200 disabled:opacity-50"
+          className="send-button"
         >
           {locale.chat.send}
         </button>
