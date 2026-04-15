@@ -1,7 +1,7 @@
 import { chatService } from '@/app/services/chatService';
 
 export async function POST(req: Request) {
-  const { userMessage, systemMessage, systemPromptId, conversationId } = await req.json();
+  const { userMessage, systemMessage, systemPromptId, conversationId, action} = await req.json();
 
   if (!userMessage || typeof userMessage !== 'string') {
     return new Response(JSON.stringify({ error: 'userMessage is required' }), {
@@ -11,6 +11,12 @@ export async function POST(req: Request) {
   }
 
   try {
+    if (action === 'addUserMessage') {
+      const id = await chatService.addUserMessage(conversationId ?? undefined, userMessage);
+      const messages = await chatService.getMessages(conversationId);
+      return new Response(JSON.stringify({ conversationId: id, messages }), { headers: { 'Content-Type': 'application/json' } });
+    }
+
     const assistantMessage = await chatService.sendMessage({
       userMessage,
       systemMessage,

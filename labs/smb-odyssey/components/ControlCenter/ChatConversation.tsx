@@ -17,7 +17,7 @@ export default function ChatConversation({chatId, messages}: {chatId: string, me
     return (
         <div className={styles["conversation-box"]}>
             {messages.map((message) => (
-                <ChatMessage message={message} />
+                <ChatMessage key={message.id} message={message} />
             ))}
         </div>
     );
