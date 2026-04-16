@@ -154,14 +154,21 @@
   }
 
   & h2 {
-    font-size: 1.15rem;   
-    font-weight: 500;   
+    font-size: 1.4rem;   
+    font-weight: bold;   
+    margin: 0.75rem 0;
+  }
+
+  & h3 {
+    font-size: 1.125rem;   
+    font-weight: bold;   
     margin: 0.75rem 0;
   }
 
   & ul {
     margin-left: 1.5rem;
     list-style-type: disc;
+    padding-left: 1.25rem;
   }
 
   & ol {

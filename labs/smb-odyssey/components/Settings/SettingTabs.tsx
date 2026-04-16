@@ -9,6 +9,11 @@ interface SettingTabButton {
   description?: string;
 }
 
+interface Props {
+  activeTab: string;
+  onTabChange: (tabId: string) => void;
+}
+
 const tabButtons: SettingTabButton[] = [
   { id: "profile", label: "Business Profile", description: "View and update business profile" },
   { id: "account", label: "Account", description: "Update account settings and preferences" },
@@ -16,8 +21,13 @@ const tabButtons: SettingTabButton[] = [
   { id: "documentations", label: "Documentation", description: "Manage business documentations" },
 ];
 
-export default function SettingTabs() {
-  const [activeTab, setActiveTab] = useState<string>(tabButtons[0].id);
+export default function SettingTabs({ activeTab, onTabChange }: Props) {
+  const [localActiveTab, setLocalActiveTab] = useState<string>(tabButtons[0].id);
+
+  const handleTabChange = (tabId: string) => {
+    setLocalActiveTab(tabId);
+    onTabChange(tabId);
+  };
 
   return (
     <section className={`rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm`}>
@@ -28,7 +38,7 @@ export default function SettingTabs() {
             <button
               key={button.id}
               type="button"
-              onClick={() => setActiveTab(button.id)}
+              onClick={() => handleTabChange(button.id)}
               className={`${styles["setting-tab-button"]} ${isActive ? styles["active"] : ""}`}>
               <span className="block text-sm font-medium">{button.label}</span>
             </button>
