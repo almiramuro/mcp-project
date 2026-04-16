@@ -1,4 +1,5 @@
 import styles from "@/app/(pages)/settings/settings.module.css"
+import DocumentUpload from "./Documentation/DocumentUploads";
 
 interface Props {
     activeTab: string;
@@ -21,8 +22,8 @@ export default function SettingsMain({activeTab}: Props) {
             content = <div><h1>Connections</h1></div>
             break;
         case "documentations":
-            // content = <DocumentationSettings />;
-            content = <div><h1>Documentation</h1></div>
+            content = <DocumentUpload businessId="default-business-id" onUploadSuccess={() => {}} />;
+            //content = <div><h1>Documentation</h1></div>
             break;
         default:
             // content = <ProfileSettings />;
